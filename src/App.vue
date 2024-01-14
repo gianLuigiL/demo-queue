@@ -29,13 +29,6 @@
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form class="space-y-6">
-        <div>
-          <label
-            for="text"
-            class="block text-sm font-medium leading-6 text-gray-900"
-            >Add text to your todo</label
-          >
-        </div>
 
         <div class="grid grid-cols-2 gap-x-2">
           <button
@@ -43,7 +36,7 @@
             type="button"
             class="col-start-2 inline-flex disabled:opacity-30 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Add TODO
+            Add task
           </button>
         </div>
       </form>
@@ -58,8 +51,8 @@
           >
             <tr>
               <th scope="col" class="px-6 py-3">#</th>
-              <th scope="col" class="px-6 py-3">Duration (ms)</th>
-              <th scope="col" class="px-6 py-3">Real duration (ms)</th>
+              <th scope="col" class="px-6 py-3">Set duration (ms)</th>
+              <th scope="col" class="px-6 py-3">Completed in (ms)</th>
               <th scope="col" class="px-6 py-3">Active</th>
               <th scope="col" class="px-6 py-3">Done</th>
             </tr>
