@@ -35,17 +35,6 @@
             class="block text-sm font-medium leading-6 text-gray-900"
             >Add text to your todo</label
           >
-          <div class="mt-2">
-            <input
-              id="text"
-              name="text"
-              type="email"
-              autocomplete="text"
-              required
-              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              v-model="textContent"
-            />
-          </div>
         </div>
 
         <div class="grid grid-cols-2 gap-x-2">
@@ -69,7 +58,6 @@
           >
             <tr>
               <th scope="col" class="px-6 py-3">#</th>
-              <th scope="col" class="px-6 py-3">Content</th>
               <th scope="col" class="px-6 py-3">Duration (ms)</th>
               <th scope="col" class="px-6 py-3">Real duration (ms)</th>
               <th scope="col" class="px-6 py-3">Active</th>
@@ -87,7 +75,6 @@
               >
                 {{ todo.order }}
               </th>
-              <td class="px-6 py-4">{{ todo.content }}</td>
               <td class="px-6 py-4">{{ todo.duration * 1000 }}</td>
               <td class="px-6 py-4">{{ todo.realDuration }}</td>
               <td class="px-6 py-4">
@@ -168,12 +155,9 @@
 import { computed, ref } from "vue";
 import { getDuration } from "./utils/getDuration";
 import { useQueue } from "./utils/queue";
-const textContent = ref("");
-const defaultContent = `Lorem ipsum, dolor sit amet consectetur adipisicing elit.`;
 
 type ToDo = {
   order: number;
-  content: string;
   duration: number;
   realDuration?: number;
   done?: boolean;
@@ -185,11 +169,8 @@ const concurrency = 3;
 let order = 1;
 
 const createToDo = () => {
-  const content = textContent.value || defaultContent;
-  textContent.value = "";
   const todo: ToDo = {
     order: order++,
-    content: content,
     duration: getDuration(),
   };
   todos.value.push(todo);
@@ -240,4 +221,3 @@ const reversed = computed(() => [...todos.value].reverse());
 </script>
 
 <style scoped></style>
-./utils/gettime
